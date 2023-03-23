@@ -1,88 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>My life is too boring </title> 
-    <link rel='stylesheet' href='styles.css'/>
-    </head>
-    <body> 
-<!--Mundane-->
-<div style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 10px;">
-    <a href='mundane.html'>
-        <h1>Mundane</h1>
-    </a>
-<!--Illness-->
-<a href='Illness.html'>
-    <h2>Illness</h2> </a>
-<!--Hate-->
-<a href='hate.html'>
-<h2>Hate</h2> </a>
-<!-- Heroin -->
-<a href='heroin.html'>
-<h2>Heroin</h2> </a>
-<!-- COVID -->
-<a href='covid.html'>
-<h2>Covid</h2> </a>
-<!-- Stroms -->
-<a href='stroms.html'>
-<h2>Stroms</h2> </a>
-<!-- War -->
-<a href='war.html'>
-<h2>War</h2>  </a>
-<!-- Divorce -->
-<a href='divorce.html'>
-<h2>Divorce</h2> </a>
-<!-- Money -->
-<a href='money.html'>
-<h2>Money</h2>  </a>
-<!-- Racism -->
-<a href='racism.html'>
-<h2>Racism</h2> </a>
-<!-- Fire -->
-<a href='fire.html'>
-<h2>Fire</h2>   </a>
-<!-- Gossip -->
-<a href='gossip.html'>
-<h2>Gossip</h2> </a>
-<!-- Nukes -->
-<a href='nukes.html'>
-<h2>Nukes</h2>  </a>
-<!-- Miscarriage -->
-<a href='miscarriage.html'>
-<h2>Miscarriage</h2>    </a>
-<!-- Homeless -->
-<a href='homeless.html'>
-<h2>Homeless</h2>   </a>
-<!-- Earthquake -->
-<a href='earthquake.html'>
-<h2>Earthquake</h2> </a>
-<!-- Alcohol -->
-<a href='alcohol.html'>
-<h2>Alcohol</h2> </a>
-<!-- Death -->
-<a href='death.html'>
-<h2>Death</h2> </a>
-<!-- Cancer -->
-<a href='cancer.html'>
-<h2>Cancer</h2> </a>
-<!-- Greed -->
-<a href='greed.html'>
-<h2>Greed</h2> </a>
-
-    </body>
-</html>
-
-
-#center-box {
+<head>
+	<title>My life is so boring!</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: oldlace;
+		}
+		
+		.box {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			width: 100px;
+			height: 50px;
+			border-radius: 5px;
+			cursor: pointer
+			transition: transform 0.2s ease-in-out;
+            border: 2px solid rgb(31, 31, 31)
+		}
+                
+		
+		.box:hover {
+			transform: scale(1.3);
+			z-index: 1;
+		}
+        
+        #center-box {
     position: fixed;
     top: calc(50% - 25px);
     left: calc(50% - 50px);
     color: black;
-    background-color: gray;
+    background-color: beige;
     z-index: 1;
-    transform: scale(1.5);
     width: 100px;
     height: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;	
+		}
+
+		.center-box{
+	transform: scale(2.0);
+		}
+
+		.center-box:hover {
+     transform: scale(3.0);
+        }
+	</style>
+</head>
+<body>
+    <a href= 'mundane.html' ><div id="center-box" class="box center-box">mundane</div></a>
+	<script>
+
+		const words = ['Alcohol', 'Cancer', 'Covid', 'Death', 'Divorce', 'Earthquake', 'Fire', 'Gossip', 'Greed', 'Hate', 'Heroin', 'Homeless', 'Illness', 'Miscarriage', 'Money', 'Nukes', 'Racism', 'Storms', ];
+		
+		const fonts = ['Arial', 'Helvetica', 'Times New Roman', 'Courier New', 'Verdana', 'Georgia', 'Tahoma','Trebuchet MS','Palatino Linotype'];
+		
+		for (let i = 0; i < 500; i++) {
+			const box = document.createElement('a');
+			box.classList.add('box');
+			box.textContent = words[Math.floor(Math.random() * words.length)];
+			box.style.backgroundColor = getRandomColor();
+			box.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)]; 
+			box.href = `${box.textContent.toLowerCase()}.html`;
+			document.body.appendChild(box);
+			updateBoxPosition(box);
+		}
+		
+		function getRandomColor() {
+			const red = Math.floor(Math.random() * 255);
+			const green = Math.floor(Math.random() * 90);
+			const blue = 0;
+			return `rgb(${red}, ${green}, ${blue})`;
+		}
+
+		function updateBoxPosition(box) {
+    if (!box.classList.contains('center-box')) {
+        box.style.top = Math.random() * (window.innerHeight - box.offsetHeight) + 'px';
+        box.style.left = Math.random() * (window.innerWidth - box.offsetWidth) + 'px';
+    }
 }
+		
+		window.addEventListener('resize', () => {
+			const boxes = document.querySelectorAll('.box');
+			boxes.forEach(box => {
+				updateBoxPosition(box);
+			});
+		});
+	</script>
+</body>
+</html>
