@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My life is so boring!</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: #F2F2F2;
+		}
+		
+		.box {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			width: 100px;
+			height: 50px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: transform 0.2s ease-in-out;
+		}
+        
+		
+		.box:hover {
+			transform: scale(1.1);
+		}
+	</style>
+</head>
+<body>
+	<script>
+		const words = ['Alcohol', 'Cancer', 'Covid', 'Death', 'Divorce', 'Earthquake', 'Fire', 'Gossip', 'Greed', 'Hate', 'Heroin', 'Homeless', 'Illness', 'Miscarriage', 'Money', 'Nukes', 'Racism', 'Storms', ];
+		
+		const fonts = ['Arial', 'Helvetica', 'Times New Roman', 'Courier New', 'Verdana', 'Georgia'];
+		
+		for (let i = 0; i < 250; i++) {
+			const box = document.createElement('a');
+			box.classList.add('box');
+			box.textContent = words[Math.floor(Math.random() * words.length)];
+			box.style.backgroundColor = getRandomColor();
+			box.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)]; // Set a random font family
+			box.href = `${box.textContent.toLowerCase()}.html`;
+			document.body.appendChild(box);
+			updateBoxPosition(box);
+		}
+		
+		function getRandomColor() {
+			const red = Math.floor(Math.random() * 255);
+			const green = Math.floor(Math.random() * 128);
+			const blue = 0;
+			return `rgb(${red}, ${green}, ${blue})`;
+		}
+
+		function updateBoxPosition(box) {
+			box.style.top = Math.random() * (window.innerHeight - box.offsetHeight) + 'px';
+			box.style.left = Math.random() * (window.innerWidth - box.offsetWidth) + 'px';
+		}
+		
+		window.addEventListener('resize', () => {
+			const boxes = document.querySelectorAll('.box');
+			boxes.forEach(box => {
+				updateBoxPosition(box);
+			});
+		});
+	</script>
+</body>
+</html>
