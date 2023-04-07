@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <link rel='stylesheet' href='styles.css'/>
   <head>
     <title>Alcohol</title>
-
+    <link rel='stylesheet' href='styles.css'/>
   </head>
-
   <body>
-    <img src="img/Earthquake.png" width= '750' alt="dog">
+    <img src="img/Earthquake.png" width='750' alt="dog">
     <p> 
       According to the United States Geological Survey (USGS), there were 10,487 earthquakes of magnitude 4.0 or greater recorded worldwide in 2021. These earthquakes resulted in 619 deaths and 16,573 injuries.
       <!-- United States Geological Survey (USGS) - Earthquake Facts and Statistics; https://www.usgs.gov/natural-hazards/earthquake-hazards/science/earthquake-facts-and-statistics -->
     </p>
+    <button onclick="goBack()">Home</button>
+    <script>
+      function goBack() {
+          window.history.back();
+      }
+  </script>
   </body>
 </html>
