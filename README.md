@@ -1,3 +1,5 @@
+*Webpage can be find under "docs\index.html"*
+
 ## Prose Response ##
 For my project, I wanted continue the theme of my portfolio thus far. To bring this idea into a webspace, I would like to follow a similar model to my visual 
 project. My orginal idea for doing this was by using a gravity simulator to make words correlating with the icons I used in my visual product to fall, creating a jumbled 
