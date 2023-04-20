@@ -3,11 +3,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color:#fef1d3;
     
   }
   
   img {
+    filter: brightness(0.9) invert(.15) sepia(.5) hue-rotate(35deg) saturate(600%);
     padding: 0px;
     width: 50vw;
     height: auto;
@@ -23,20 +24,21 @@ body {
     text-align: center;
     font-size: clamp(16px, 2vw, 24px);
     font-weight: bolder;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-  }
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(1, 44, 4);
+    }
 
   button {
     display: flex;
     position: fixed;
     top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    align-content: center;
     margin: 5px;
     scale: 2.0;
-    background-color: beige;
+    background-color: #fbfdc4;
     cursor: pointer;
-    
+    font-size: clamp(10px; 1vw 24px);
+    color:rgb(1, 44, 4);
+    border-radius: 5px;
   }
 
-  
