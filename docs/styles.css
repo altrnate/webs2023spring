@@ -8,7 +8,7 @@ body {
   }
   
   img {
-    filter: brightness(0.9) invert(.15) sepia(.5) hue-rotate(35deg) saturate(600%);
+    filter: brightness(0.9) invert(.11) sepia(.5) hue-rotate(35deg) saturate(600%);
     padding: 0px;
     width: 50vw;
     height: auto;
